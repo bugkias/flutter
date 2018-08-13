@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home')),
+      appBar: AppBar(title: Text('Quick App')),
       body: Center(
         child: RaisedButton(
             onPressed: () {
@@ -48,12 +48,25 @@ class _HomeState extends State<Home> {
               double myArea = 0.5 * (base) * (height);
               print('${myArea}'); // แบบมีการประมวณผล
 
-              print('$types'); // แบบมีการประมวณผล
+              print('$types');
+
+              print('==============');
+              Hello user = Hello('$fname');
+              user.helloName();
             },
             color: Colors.redAccent,
             textColor: Colors.white,
             child: Text('Press me!')),
       ),
     );
+  }
+}
+
+class Hello {
+  String name;
+  Hello(this.name);
+
+  helloName() {
+    print('Hello $name');
   }
 }
